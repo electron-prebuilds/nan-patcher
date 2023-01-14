@@ -37,7 +37,7 @@ async function patchPackageJSON(ctx: PackageContext) {
 
   packageJSON.repository = {
     type: 'git',
-    url: 'git://github.com/electron-prebuilds/nan.git',
+    url: 'git://github.com/electron-prebuilds/nan-patcher.git',
   };
 
   await fs.writeFile(packageJSONPath, JSON.stringify(packageJSON, null, 4));
