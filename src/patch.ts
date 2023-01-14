@@ -12,11 +12,11 @@ async function getNewBuildVersion(packageName: string, baseVersion: string) {
 
     const versions = Object.keys(result)
       .filter(k => k !== 'modified' && k !== 'created')
-      .filter(k => new RegExp(`^${baseVersion}-prebuild.\\d+$`).test(k))
+      .filter(k => new RegExp(`^${baseVersion}-prebuild\\.\\d+$`).test(k))
       .sort((a, b) => (result[a] > result[b] ? -1 : 1));
 
     if (versions.length > 0) {
-      return Number(versions[0].substring(baseVersion.length + 1)) + 1;
+      return Number(versions[0].substring(baseVersion.length + '-prebuild.'.length)) + 1;
     }
   } catch {} // eslint-disable-line no-empty
 
