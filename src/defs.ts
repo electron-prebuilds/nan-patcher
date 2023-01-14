@@ -14,7 +14,7 @@ export class PackageContext {
 
   public newVersion: string;
 
-  public npmName = IS_PREVIEW ? '@electron-prebuilds/nan-test' : '@electron-prebuilds/nan';
+  public npmName = IS_PREVIEW ? '@electron-prebuilds-preview/nan' : '@electron-prebuilds/nan';
 
   constructor(public readonly input: PackageInput) {}
 
